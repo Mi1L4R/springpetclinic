@@ -2,7 +2,7 @@ package com.udemy.springpetclinic.Models;
 
 import java.time.LocalDate;
 
-public class Pet {
+public class Pet extends BaseEntity{
 
     private PetType PetType;
     private Owner Owner;

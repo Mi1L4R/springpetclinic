@@ -1,6 +1,6 @@
 package com.udemy.springpetclinic.Models;
 
-public class Person {
+public class Person extends BaseEntity {
 
     private String FirstName;
     private String LastName;
