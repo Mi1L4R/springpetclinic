@@ -1,11 +1,11 @@
 package Services.MapImplementation;
 
-import Services.ICRUDService;
+import Services.IOwnerService;
 import com.udemy.springpetclinic.Models.Owner;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements ICRUDService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements IOwnerService {
 
     @Override
     public Set<Owner> findAll() {
@@ -33,5 +33,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     @Override
     public Owner findById(Long id) {
         return super.findById(id);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
     }
 }

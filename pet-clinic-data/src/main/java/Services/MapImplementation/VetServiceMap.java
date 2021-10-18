@@ -1,11 +1,11 @@
 package Services.MapImplementation;
 
-import Services.ICRUDService;
+import Services.IVetService;
 import com.udemy.springpetclinic.Models.Vet;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements ICRUDService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements IVetService {
 
     @Override
     public Set<Vet> findAll() {
