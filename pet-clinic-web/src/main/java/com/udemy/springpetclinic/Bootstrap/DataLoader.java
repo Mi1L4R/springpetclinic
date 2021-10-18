@@ -2,8 +2,6 @@ package com.udemy.springpetclinic.Bootstrap;
 
 import Services.IOwnerService;
 import Services.IVetService;
-import Services.MapImplementation.OwnerServiceMap;
-import Services.MapImplementation.VetServiceMap;
 import com.udemy.springpetclinic.Models.Owner;
 import com.udemy.springpetclinic.Models.Vet;
 import org.springframework.boot.CommandLineRunner;
@@ -17,9 +15,9 @@ public class DataLoader implements CommandLineRunner {
     private final IVetService vetService;
 
 
-    public DataLoader() {
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
+    public DataLoader(IOwnerService ownerService, IVetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
