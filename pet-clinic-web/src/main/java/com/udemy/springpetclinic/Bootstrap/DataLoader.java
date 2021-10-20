@@ -4,10 +4,13 @@ import Services.IOwnerService;
 import Services.IPetTypeService;
 import Services.IVetService;
 import com.udemy.springpetclinic.Models.Owner;
+import com.udemy.springpetclinic.Models.Pet;
 import com.udemy.springpetclinic.Models.PetType;
 import com.udemy.springpetclinic.Models.Vet;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -35,10 +38,21 @@ public class DataLoader implements CommandLineRunner {
             PetType cat = new PetType("Cat");
             PetType savedCatPetType = petTypeService.save(cat);
 
-            Owner owner1 = new Owner("Michael","Weston");
+
+            Owner owner1 = new Owner("Michael","Weston", "123 Brickerel","Miami","0111234567");
+
+            Pet mikesPet = new Pet(savedDogPetType,owner1, LocalDate.now(),"Rosco");
+
+            owner1.getPets().add(mikesPet);
             ownerService.save(owner1);
 
-            Owner owner2 = new Owner("Fiona","Glenanne");
+
+
+            Owner owner2 = new Owner("Fiona","Glenanne", "123 Brickerel","Miami","0111234567");
+
+            Pet fionasPet = new Pet(savedDogPetType,owner1, LocalDate.now(),"JustCat");
+
+            owner2.getPets().add(fionasPet);
             ownerService.save(owner2);
 
             System.out.println("Loaded Owners....");

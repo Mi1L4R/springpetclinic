@@ -1,10 +1,11 @@
 package com.udemy.springpetclinic.Models;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Owner extends Person{
 
-    private Set<Pet> pets;
+    private Set<Pet> pets = new HashSet<>();
     private String address;
     private String city;
     private String telephone;
@@ -17,6 +18,14 @@ public class Owner extends Person{
     public Owner(String firstName, String lastName){
         super.setFirstName(firstName);
         super.setLastName(lastName);
+    }
+
+    public Owner(String firstName, String lastName, String address,String city, String telephone){
+        super.setFirstName(firstName);
+        super.setLastName(lastName);
+        this.address = address;
+        this.city = city;
+        this.telephone = telephone;
     }
 
     public Owner(Long id, String firstName, String lastName) {
