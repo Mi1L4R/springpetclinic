@@ -1,12 +1,14 @@
-package Services.MapImplementation;
+package com.udemy.springpetclinic.Services.MapImplementation;
 
-import Services.IPetService;
 import com.udemy.springpetclinic.Models.Pet;
+import com.udemy.springpetclinic.Services.IPetService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements IPetService {
 
     @Override

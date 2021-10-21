@@ -1,7 +1,7 @@
 package com.udemy.springpetclinic.Bootstrap;
 
-import Services.*;
 import com.udemy.springpetclinic.Models.*;
+import com.udemy.springpetclinic.Services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -68,7 +68,7 @@ public class DataLoader implements CommandLineRunner {
 
 
         Owner owner2 = new Owner("Fiona", "Glenanne", "123 Brickerel", "Miami", "0111234567");
-        Pet fionasPet = new Pet(savedDogPetType, owner1, LocalDate.now(), "JustCat");
+        Pet fionasPet = new Pet(savedCatPetType, owner2, LocalDate.now(), "JustCat");
         owner2.getPets().add(fionasPet);
         ownerService.save(owner2);
 

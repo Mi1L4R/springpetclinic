@@ -1,4 +1,4 @@
-package Services;
+package com.udemy.springpetclinic.Services;
 
 import com.udemy.springpetclinic.Models.Visit;
 

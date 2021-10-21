@@ -1,12 +1,14 @@
-package Services.MapImplementation;
+package com.udemy.springpetclinic.Services.MapImplementation;
 
-import Services.IVisitService;
 import com.udemy.springpetclinic.Models.Visit;
+import com.udemy.springpetclinic.Services.IVisitService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class VisitMapService extends AbstractMapService<Visit, Long> implements IVisitService {
 
 

@@ -1,8 +1,8 @@
-package Services.springdatajpa;
+package com.udemy.springpetclinic.Services.springdatajpa;
 
-import Services.IPetTypeService;
 import com.udemy.springpetclinic.Models.PetType;
 import com.udemy.springpetclinic.Repositories.IPetTypeRepository;
+import com.udemy.springpetclinic.Services.IPetTypeService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 

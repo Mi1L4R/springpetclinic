@@ -1,6 +1,6 @@
 package com.udemy.springpetclinic.Controllers;
 
-import Services.IVetService;
+import com.udemy.springpetclinic.Services.IVetService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

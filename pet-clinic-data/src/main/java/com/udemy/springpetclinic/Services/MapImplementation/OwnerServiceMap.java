@@ -1,15 +1,17 @@
-package Services.MapImplementation;
+package com.udemy.springpetclinic.Services.MapImplementation;
 
-import Services.IOwnerService;
-import Services.IPetService;
-import Services.IPetTypeService;
 import com.udemy.springpetclinic.Models.Owner;
 import com.udemy.springpetclinic.Models.Pet;
+import com.udemy.springpetclinic.Services.IOwnerService;
+import com.udemy.springpetclinic.Services.IPetService;
+import com.udemy.springpetclinic.Services.IPetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements IOwnerService {
 
     private final IPetTypeService petTypeService;
