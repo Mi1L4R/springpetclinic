@@ -1,24 +1,31 @@
 package com.udemy.springpetclinic.Models;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "pets")
 public class Pet extends BaseEntity{
 
     @ManyToOne
     @JoinColumn(name = "type_id")
-    private PetType PetType;
+    private PetType petType;
 
     @ManyToOne
     @JoinColumn(name = "owner_id")
-    private Owner Owner;
+    private Owner owner;
 
     @Column(name = "birth_date")
-    private LocalDate BirthDate;
+    private LocalDate birthDate;
 
     @Column(name = "name")
     private String name;
@@ -26,53 +33,11 @@ public class Pet extends BaseEntity{
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
     private Set<Visit> visits = new HashSet<>();
 
-    public Pet() {
-    }
-
     public Pet(PetType petType, Owner owner, LocalDate birthDate, String name) {
-        PetType = petType;
-        Owner = owner;
-        BirthDate = birthDate;
+        this.petType = petType;
+        this.owner = owner;
+        this.birthDate = birthDate;
         this.name = name;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public com.udemy.springpetclinic.Models.PetType getPetType() {
-        return PetType;
-    }
-
-    public void setPetType(com.udemy.springpetclinic.Models.PetType petType) {
-        PetType = petType;
-    }
-
-    public com.udemy.springpetclinic.Models.Owner getOwner() {
-        return Owner;
-    }
-
-    public void setOwner(com.udemy.springpetclinic.Models.Owner owner) {
-        Owner = owner;
-    }
-
-    public LocalDate getBirthDate() {
-        return BirthDate;
-    }
-
-    public void setBirthDate(LocalDate birthDate) {
-        BirthDate = birthDate;
-    }
-
-    public Set<Visit> getVisits() {
-        return visits;
-    }
-
-    public void setVisits(Set<Visit> visits) {
-        this.visits = visits;
-    }
 }
