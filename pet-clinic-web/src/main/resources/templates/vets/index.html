@@ -16,8 +16,12 @@
     </thead>
     <tbody>
     <tr th:each="vet : ${vets}">
-        <td th:text="${vet?.id}">id</td>
-        <td th:text="${vet?.firstName}">firstName</td>
+        <td th:text="|${vet?.firstName} ${vet?.lastName}|">Ben</td>
+        <td>
+            <span th:if="${vet.specialities.size() == 0}">None</span>
+            <span th:each="speciality : ${vet.specialities}"
+                  th:text="${specialityStat.count != specialityStat.size ? speciality.description +', ' : speciality.description}">Speciality</span>
+        </td>
     </tr>
     </tbody>
 </table>
